@@ -137,8 +137,11 @@
     margin-top:22px;max-width:46ch;color:var(--ink-soft);font-size:1.07rem;
   }
   .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
-  .hero-art{display:flex;justify-content:center;align-items:center;}
-  .hero-art svg{width:100%;max-width:380px;}
+  .hero-art{
+    display:flex;justify-content:center;align-items:center;
+    background:var(--paper-raised);border-radius:28px;padding:28px;
+  }
+  .hero-art img{width:100%;max-width:400px;height:auto;display:block;}
 
   /* ---------- STANDARDS STRIP ---------- */
   .ledger{
@@ -313,22 +316,7 @@
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="420" height="380" fill="var(--paper-raised)"/>
-        <g fill="none">
-          <rect x="65" y="45" width="330" height="330" rx="54" transform="rotate(12 230 210)" stroke="var(--facet)" stroke-width="1.3"/>
-          <line x1="70" y1="258" x2="352" y2="146" stroke="var(--facet)" stroke-width="1" opacity="0.6"/>
-          <g stroke="var(--laterite)" stroke-linejoin="round">
-            <polygon points="300,95 365,160 378,230 340,275 270,285 210,250 195,190 230,130" stroke-width="1.2"/>
-            <path d="M300,95 L365,160 M300,95 L378,230 M300,95 L340,275 M300,95 L270,285 M300,95 L210,250 M300,95 L195,190 M300,95 L230,130" stroke-width="0.6"/>
-            <path d="M365,160 L270,285 M195,190 L340,275" stroke-width="0.45" opacity="0.6"/>
-          </g>
-          <g stroke="var(--laterite)" stroke-linejoin="round">
-            <polygon points="90,295 140,245 210,235 255,255 230,300 170,330 110,330" stroke-width="1.2"/>
-            <path d="M90,295 L140,245 M90,295 L210,235 M90,295 L255,255 M90,295 L230,300 M90,295 L170,330 M90,295 L110,330" stroke-width="0.6"/>
-          </g>
-        </g>
-      </svg>
+      <img src="/images/hero-diamond.png" alt="" loading="eager">
     </div>
   </div>
 </header>
