@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orivia Diamonds</title>
+<meta name="description" content="Orivia Diamonds trades natural, untreated rough and polished diamonds sourced directly from licensed mines and artisanal small-scale mining communities across Sub-Saharan Africa, under Kimberley Process certification and full digital traceability.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ink:#16181c;
+    --ink-soft:#4a4740;
+    --paper:#ede9e1;
+    --paper-soft:#cdc6b6;
+    --paper-raised:#f6f3ec;
+    --laterite:#ad5230;
+    --laterite-soft:#c98257;
+    --facet:#6c7a7a;
+    --facet-soft:#c9d3d3;
+    --rule:rgba(22,24,28,0.14);
+    --shadow:rgba(22,24,28,0.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#efe9de;
+      --ink-soft:#b9b2a4;
+      --paper:#15171b;
+      --paper-soft:#3a3833;
+      --paper-raised:#1c1e23;
+      --laterite:#d98257;
+      --laterite-soft:#ad5230;
+      --facet:#9fb0b0;
+      --facet-soft:#2b3433;
+      --rule:rgba(239,233,222,0.14);
+      --shadow:rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#efe9de;
+    --ink-soft:#b9b2a4;
+    --paper:#15171b;
+    --paper-soft:#3a3833;
+    --paper-raised:#1c1e23;
+    --laterite:#d98257;
+    --laterite-soft:#ad5230;
+    --facet:#9fb0b0;
+    --facet-soft:#2b3433;
+    --rule:rgba(239,233,222,0.14);
+    --shadow:rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  .label{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:0.68rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--laterite);
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    margin:0;
+    text-wrap:balance;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px);}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:40;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brandmark{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-weight:500;font-size:1.18rem;letter-spacing:0.01em;
+  }
+  .brandmark svg{width:22px;height:22px;flex:none;}
+  nav ul{list-style:none;display:flex;gap:34px;margin:0;padding:0;}
+  nav ul a{
+    font-size:0.86rem;text-decoration:none;color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  nav ul a:hover,nav a:focus-visible{color:var(--laterite);}
+  .navlinks{display:flex;align-items:center;gap:34px;}
+  @media (max-width:760px){ .navlinks ul{display:none;} }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+    padding:11px 20px;border-radius:2px;text-decoration:none;
+    border:1px solid var(--ink);color:var(--ink);background:none;appearance:none;cursor:pointer;
+    transition:background .15s ease,color .15s ease;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper);}
+  .btn-solid{background:var(--laterite);border-color:var(--laterite);color:var(--paper-raised);}
+  .btn-solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;
+    align-items:center;
+    padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px);
+  }
+  @media (max-width:860px){ .hero .wrap{grid-template-columns:1fr;} .hero-art{order:-1;} }
+  .hero h1{
+    font-size:clamp(2.5rem,5.2vw,4.1rem);
+    line-height:1.02;
+    font-optical-sizing:auto;
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--laterite);
+  }
+  .hero-eyebrow{margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .hero-eyebrow .rule{width:30px;height:1px;background:var(--laterite);}
+  .hero p.lede{
+    margin-top:22px;max-width:46ch;color:var(--ink-soft);font-size:1.07rem;
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .hero-art{display:flex;justify-content:center;align-items:center;}
+  .hero-art svg{width:100%;max-width:380px;}
+
+  /* ---------- STANDARDS STRIP ---------- */
+  .ledger{
+    border-bottom:1px solid var(--rule);
+    background:var(--paper-raised);
+  }
+  .ledger .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .ledger-item{
+    padding:26px clamp(16px,2.4vw,30px);
+    border-right:1px solid var(--rule);
+  }
+  .ledger-item:last-child{border-right:none;}
+  .ledger-item .num{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--laterite);}
+  .ledger-item h3{font-size:0.98rem;margin-top:10px;font-weight:500;}
+  .ledger-item p{margin:8px 0 0;font-size:0.84rem;color:var(--ink-soft);}
+  @media (max-width:860px){ .ledger .wrap{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .ledger .wrap{grid-template-columns:1fr;} .ledger-item{border-right:none;border-bottom:1px solid var(--rule);} .ledger-item:last-child{border-bottom:none;} }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:clamp(56px,8vw,104px) 0;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:baseline;gap:30px;
+    margin-bottom:clamp(32px,5vw,56px);flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.2vw,2.6rem);}
+  .section-head .label{white-space:nowrap;}
+  .section-intro{color:var(--ink-soft);max-width:62ch;font-size:1rem;margin:-20px 0 40px;}
+
+  /* ---------- CATALOGUE (rough / polished) ---------- */
+  .catalogue{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  @media (max-width:760px){ .catalogue{grid-template-columns:1fr;} }
+  .cat-card{background:var(--paper);padding:clamp(28px,3.4vw,44px);}
+  .cat-card .label{display:block;margin-bottom:14px;}
+  .cat-card h3{font-size:1.7rem;margin-bottom:12px;}
+  .cat-card > p{color:var(--ink-soft);font-size:0.95rem;max-width:40ch;margin-bottom:26px;}
+  .spec{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:11px 0;border-top:1px solid var(--rule);
+    font-size:0.88rem;
+  }
+  .spec:first-of-type{border-top:1px solid var(--rule);}
+  .spec dt{color:var(--ink-soft);}
+  .spec dd{margin:0;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;text-align:right;}
+  dl.spec-list{margin:0 0 24px;}
+  .cat-art{height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+  .cat-art svg{height:100%;}
+
+  /* ---------- ORIGIN / CHAIN OF CUSTODY ---------- */
+  .origin{background:var(--ink);color:var(--paper);}
+  .origin .label{color:var(--laterite-soft);}
+  .origin .section-head h2{color:var(--paper);}
+  .origin-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:start;}
+  @media (max-width:860px){ .origin-grid{grid-template-columns:1fr;} }
+  .origin-copy p{color:rgba(239,233,222,0.72);max-width:44ch;font-size:0.98rem;}
+  .chain{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .chain li{
+    counter-increment:step;
+    position:relative;padding:20px 0 20px 54px;
+    border-top:1px solid rgba(239,233,222,0.15);
+  }
+  .chain li:first-child{border-top:none;}
+  .chain li::before{
+    content:counter(step,decimal-leading-zero);
+    position:absolute;left:0;top:19px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--laterite-soft);
+  }
+  .chain h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.08rem;margin:0 0 6px;color:var(--paper);}
+  .chain p{margin:0;font-size:0.88rem;color:rgba(239,233,222,0.62);max-width:48ch;}
+  .aside{
+    font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;
+    font-size:1.2rem;line-height:1.5;color:var(--paper) !important;
+    max-width:36ch !important;
+    padding-left:20px;border-left:2px solid var(--laterite-soft);
+    margin-top:30px !important;
+  }
+  .aside em{color:var(--laterite-soft);font-style:italic;}
+
+  /* ---------- 4Cs ---------- */
+  .grading{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  @media (max-width:760px){ .grading{grid-template-columns:repeat(2,1fr);} }
+  .grade-card{background:var(--paper);padding:26px 22px;}
+  .grade-card .letter{
+    font-family:'Fraunces',serif;font-size:2.3rem;color:var(--laterite);line-height:1;
+  }
+  .grade-card h4{margin:14px 0 6px;font-size:0.96rem;}
+  .grade-card p{margin:0;font-size:0.82rem;color:var(--ink-soft);}
+  .scale{display:flex;gap:3px;margin-top:14px;}
+  .scale span{flex:1;height:5px;background:var(--paper-soft);}
+  .scale span.on{background:var(--laterite);}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:var(--paper-raised);border:1px solid var(--rule);
+    padding:clamp(36px,5vw,56px);
+    display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;
+  }
+  @media (max-width:760px){ .cta{grid-template-columns:1fr;} }
+  .cta h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:14px;}
+  .cta p{color:var(--ink-soft);max-width:42ch;}
+  .cta-form{display:flex;flex-direction:column;gap:12px;}
+  .cta-form input,.cta-form select{
+    font-family:'Work Sans',sans-serif;font-size:0.9rem;
+    padding:12px 14px;border:1px solid var(--paper-soft);background:var(--paper);color:var(--ink);
+    border-radius:2px;
+  }
+  .cta-form input:focus,.cta-form select:focus{outline:2px solid var(--laterite);outline-offset:1px;}
+
+  /* ---------- PARCEL MODAL ---------- */
+  dialog#parcel-modal{
+    border:none;border-radius:3px;padding:0;
+    background:var(--paper-raised);color:var(--ink);
+    max-width:440px;width:90vw;
+    box-shadow:0 24px 64px var(--shadow);
+  }
+  dialog#parcel-modal::backdrop{background:rgba(10,10,10,0.55);}
+  .modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:26px 26px 0;}
+  .modal-head .label{display:block;margin-bottom:6px;}
+  .modal-head h3{font-size:1.5rem;}
+  .close-x{
+    background:none;border:none;cursor:pointer;color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;
+    padding:4px;flex:none;
+  }
+  .close-x:hover{color:var(--laterite);}
+  .modal-body{padding:16px 26px 26px;}
+  .modal-body .spec-list{margin:16px 0 24px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--rule);padding:46px 0 36px;}
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+  footer .label{display:block;margin-bottom:10px;}
+  footer p{margin:0;font-size:0.85rem;color:var(--ink-soft);max-width:38ch;}
+  .foot-links{display:flex;gap:28px;flex-wrap:wrap;}
+  .foot-links a{font-size:0.85rem;text-decoration:none;color:var(--ink-soft);}
+  .foot-links a:hover{color:var(--laterite);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brandmark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 9L12 2L20 9L12 22L4 9Z" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M4 9H20M8.5 9L12 2L15.5 9M8.5 9L12 22M15.5 9L12 22" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+      </svg>
+      Orivia Diamonds
+    </div>
+    <div class="navlinks">
+      <ul>
+        <li><a href="#catalogue">Diamonds</a></li>
+        <li><a href="#origin">Origin</a></li>
+        <li><a href="#grading">Standards</a></li>
+        <li><a href="#trade">Trade</a></li>
+      </ul>
+      <a class="btn" href="#trade">Inquire</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow"><span class="rule"></span><span class="label">Orivia Minerals &nbsp;·&nbsp; Diamond Division</span></div>
+      <h1>African soil.<br><em>Light of the Earth.</em></h1>
+      <p class="lede">Orivia Diamonds sources, evaluates and trades natural, untreated diamonds direct from licensed mines and alluvial fields across Sub-Saharan Africa. Rough parcels and polished diamonds, each traceable from pit to your doorstep.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="#catalogue">View current parcels</a>
+        <a class="btn" href="#origin">Our chain of custody</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="280" height="280" rx="36" fill="var(--paper-raised)" stroke="var(--rule)" stroke-width="1"/>
+        <g fill="none">
+          <g stroke="var(--facet)" stroke-width="0.7" opacity="0.4">
+            <path d="M30,44 H46 M38,36 V52"/>
+            <path d="M274,44 H290 M282,36 V52"/>
+            <path d="M30,276 H46 M38,268 V284"/>
+            <path d="M274,276 H290 M282,268 V284"/>
+          </g>
+          <g stroke="var(--facet)" stroke-width="0.7" opacity="0.45">
+            <line x1="56" y1="52" x2="56" y2="268"/>
+            <line x1="50" y1="52" x2="62" y2="52"/>
+            <line x1="50" y1="268" x2="62" y2="268"/>
+          </g>
+          <g stroke-linejoin="round">
+            <line x1="160" y1="128" x2="262" y2="150" stroke="var(--facet)" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.5"/>
+            <line x1="160" y1="128" x2="58" y2="150" stroke="var(--facet)" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.5"/>
+            <line x1="160" y1="52" x2="160" y2="128" stroke="var(--facet)" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.5"/>
+            <line x1="160" y1="268" x2="160" y2="128" stroke="var(--facet)" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.5"/>
+            <line x1="58" y1="150" x2="160" y2="172" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="262" y1="150" x2="160" y2="172" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="52" x2="58" y2="150" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="52" x2="262" y2="150" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="52" x2="160" y2="172" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="268" x2="58" y2="150" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="268" x2="262" y2="150" stroke="var(--facet)" stroke-width="1.1"/>
+            <line x1="160" y1="268" x2="160" y2="172" stroke="var(--facet)" stroke-width="1.1"/>
+          </g>
+          <g stroke="var(--laterite)">
+            <circle cx="160" cy="104" r="32" stroke-width="1.1"/>
+            <polygon points="173,104 169.1,113.1 160,117 150.9,113.1 147,104 150.9,94.9 160,91 169.1,94.9" stroke-width="0.7"/>
+            <path d="M173,104 L190.6,104 M169.1,113.1 L180.6,124.6 M160,117 L160,134.6 M150.9,113.1 L139.4,124.6 M147,104 L129.4,104 M150.9,94.9 L139.4,83.4 M160,91 L160,73.4 M169.1,94.9 L180.6,83.4" stroke-width="0.55" opacity="0.8"/>
+            <circle cx="160" cy="214" r="38" stroke-width="1.1"/>
+            <polygon points="175.6,214 171.1,224.1 160,228.6 148.9,224.1 144.4,214 148.9,203.9 160,199.4 171.1,203.9" stroke-width="0.7"/>
+            <path d="M175.6,214 L198,214 M171.1,224.1 L187.9,240.9 M160,228.6 L160,252 M148.9,224.1 L132.1,240.9 M144.4,214 L122,214 M148.9,203.9 L132.1,187.1 M160,199.4 L160,176 M171.1,203.9 L187.9,187.1" stroke-width="0.55" opacity="0.8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="ledger">
+  <div class="wrap">
+    <div class="ledger-item">
+      <div class="num">01</div>
+      <h3>KP &amp; Digital Traceability</h3>
+      <p>Every parcel ships under Kimberley Process certification with a full digital chain-of-custody record.</p>
+    </div>
+    <div class="ledger-item">
+      <div class="num">02</div>
+      <h3>Sub-Saharan Africa, Direct</h3>
+      <p>Bought directly at the point of extraction from licensed artisanal and small-scale mining sites.</p>
+    </div>
+    <div class="ledger-item">
+      <div class="num">03</div>
+      <h3>Long-Term Partnerships</h3>
+      <p>Multi-year relationships with mining communities and buyers, built on repeat trade.</p>
+    </div>
+    <div class="ledger-item">
+      <div class="num">04</div>
+      <h3>Compliance First</h3>
+      <p>Held to the full range of international and national standards governing responsible mineral trade, backed by the Orivia Minerals trading house standard.</p>
+    </div>
+  </div>
+</section>
+
+<section id="catalogue">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Rough and polished,<br>one standard.</h2>
+      <span class="label">Current parcels</span>
+    </div>
+    <div class="catalogue">
+      <div class="cat-card">
+        <span class="label">Rough · Available</span>
+        <h3>Rough Diamond Parcels</h3>
+        <p>Natural, untreated alluvial diamonds, sold by parcel and digitally pre-evaluated to your planning specifications before you receive the parcel.</p>
+        <div class="cat-art" aria-hidden="true">
+          <svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <line x1="80" y1="54" x2="135" y2="68" stroke="var(--facet)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+            <line x1="80" y1="54" x2="25" y2="68" stroke="var(--facet)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+            <line x1="80" y1="10" x2="80" y2="54" stroke="var(--facet)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+            <line x1="80" y1="130" x2="80" y2="54" stroke="var(--facet)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+            <line x1="25" y1="68" x2="80" y2="82" stroke="var(--laterite)" stroke-width="1.2"/>
+            <line x1="135" y1="68" x2="80" y2="82" stroke="var(--laterite)" stroke-width="1.2"/>
+            <line x1="80" y1="10" x2="25" y2="68" stroke="var(--facet)" stroke-width="1"/>
+            <line x1="80" y1="10" x2="135" y2="68" stroke="var(--facet)" stroke-width="1"/>
+            <line x1="80" y1="10" x2="80" y2="82" stroke="var(--facet)" stroke-width="1"/>
+            <line x1="80" y1="130" x2="25" y2="68" stroke="var(--facet)" stroke-width="1"/>
+            <line x1="80" y1="130" x2="135" y2="68" stroke="var(--facet)" stroke-width="1"/>
+            <line x1="80" y1="130" x2="80" y2="82" stroke="var(--facet)" stroke-width="1"/>
+          </svg>
+        </div>
+        <dl class="spec-list">
+          <div class="spec"><dt>Parcel size</dt><dd>500 – 2,000 ct</dd></div>
+          <div class="spec"><dt>Origin</dt><dd>SUB-SAHARAN AFRICA</dd></div>
+          <div class="spec"><dt>Trade form</dt><dd>SAWABLE / MAKEABLE</dd></div>
+          <div class="spec"><dt>Certification</dt><dd>KP + DIGITAL TRACEABILITY</dd></div>
+        </dl>
+        <button type="button" class="btn" onclick="document.getElementById('parcel-modal').showModal()">View current parcel</button>
+      </div>
+      <div class="cat-card">
+        <span class="label">Polished · Available</span>
+        <h3>Cut &amp; Polished Diamonds</h3>
+        <p>Polished diamonds, faceted and graded to specification, delivered to your location, with full documentation and certification.</p>
+        <div class="cat-art" aria-hidden="true">
+          <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <circle cx="80" cy="80" r="62" stroke="var(--facet)" stroke-width="0.8"/>
+            <polygon points="104,80 97,97 80,104 63,97 56,80 63,63 80,56 97,63" stroke="var(--laterite)" stroke-width="1"/>
+            <path d="M104,80 L119,96 M104,80 L119,64 M97,97 L96,119 M97,97 L119,96 M80,104 L64,119 M80,104 L96,119 M63,97 L41,96 M63,97 L64,119 M56,80 L41,64 M56,80 L41,96 M63,63 L64,41 M63,63 L41,64 M80,56 L96,41 M80,56 L64,41 M97,63 L119,64 M97,63 L96,41" stroke="var(--facet)" stroke-width="0.6"/>
+            <path d="M119,96 L142,80 M119,64 L142,80 M96,119 L124,124 M119,96 L124,124 M64,119 L80,142 M96,119 L80,142 M41,96 L36,124 M64,119 L36,124 M41,64 L18,80 M41,96 L18,80 M64,41 L36,36 M41,64 L36,36 M96,41 L80,18 M64,41 L80,18 M119,64 L124,36 M96,41 L124,36" stroke="var(--facet)" stroke-width="0.6"/>
+          </svg>
+        </div>
+        <dl class="spec-list">
+          <div class="spec"><dt>Carat range</dt><dd>0.30 – 20.00 CT</dd></div>
+          <div class="spec"><dt>Cut</dt><dd>ROUND BRILLIANT / EMERALD / OVAL +6</dd></div>
+          <div class="spec"><dt>Grading</dt><dd>GIA-ALIGNED 4Cs</dd></div>
+          <div class="spec"><dt>Delivery</dt><dd>INSURED, TO YOUR LOCATION</dd></div>
+        </dl>
+        <a class="btn" href="#trade">Request diamond sheet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="origin" class="origin">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From African soil<br>to the ledger.</h2>
+      <span class="label">Chain of custody</span>
+    </div>
+    <div class="origin-grid">
+      <div class="origin-copy">
+        <p>Orivia Minerals has traded gold and minerals out of West Africa for years. Orivia Diamonds extends that same desk, and the same paper trail, to diamond fields across Sub-Saharan Africa, so every carat we sell can be traced back to a licensed pit of known origin.</p>
+        <p>We work directly with artisanal and small-scale mining (ASM) communities and licensed dealers, buying directly at the point of extraction. We stay: our relationships with these communities are built for years, across seasons and parcels.</p>
+        <p class="aside">In the fields where we buy, diamonds are known by an older name: the <em>Light of the Earth.</em></p>
+      </div>
+      <ol class="chain">
+        <li><h4>Community partnership</h4><p>Long-term, direct relationships with ASM cooperatives and licensed dealers, built on repeat trade.</p></li>
+        <li><h4>Licensed extraction</h4><p>Diamonds are bought directly from permitted artisanal and industrial mining sites across our Sub-Saharan sourcing network.</p></li>
+        <li><h4>Digital pre-evaluation</h4><p>Each parcel is weighed, scanned and mapped on-site by Orivia's resident gemologists before it is offered.</p></li>
+        <li><h4>Kimberley certification</h4><p>Export documentation and digital chain-of-custody records are filed in-country before any parcel leaves the continent.</p></li>
+        <li><h4>Cutting to specification</h4><p>Rough selected for polish is planned and cut to the buyer's required shape, size and quality; the remainder is sold on as graded rough parcels.</p></li>
+        <li><h4>Sale &amp; delivery</h4><p>Diamonds ship insured, with full documentation, to the buyer's chosen location.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="grading">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Evaluated to<br>your specification.</h2>
+      <span class="label">Digital pre-evaluation, parcel by parcel</span>
+    </div>
+    <p class="section-intro">Before a parcel is offered, every rough diamond is mapped with digital planning and optical scanning technology, plotting inclusions, projecting colour and simulating polished yield against the planning specification you set. We evaluate every parcel to your own standard and plan each diamond to the shape and quality your order calls for.</p>
+    <div class="grading">
+      <div class="grade-card">
+        <div class="letter">C</div>
+        <h4>Carat</h4>
+        <p>Weighed to 1/100 ct at the point of purchase, rough and polished, against your required weight range.</p>
+      </div>
+      <div class="grade-card">
+        <div class="letter">C</div>
+        <h4>Cut</h4>
+        <p>Rough is planned for maximum yield: sawable crystals mapped for two polished diamonds, makeable crystals for one, to the shape you order.</p>
+        <div class="scale"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+      </div>
+      <div class="grade-card">
+        <div class="letter">C</div>
+        <h4>Clarity</h4>
+        <p>Mapped under magnification and digital scanning, then matched against the clarity band your specification calls for.</p>
+      </div>
+      <div class="grade-card">
+        <div class="letter">C</div>
+        <h4>Colour</h4>
+        <p>Graded on the D–Z scale, including fancy colour and fluorescence response, to your buying specification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trade">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <span class="label">For cutters, jewellers &amp; long-term buyers</span>
+        <h2>Request access to current parcels.</h2>
+        <p>Tell us your specification: carat, clarity, colour, cut, and we'll quote current rough and polished availability against it, certified and delivered to your location.</p>
+      </div>
+      <form class="cta-form" onsubmit="return false;">
+        <input type="text" placeholder="Company / name" required>
+        <input type="email" placeholder="Work email" required>
+        <select>
+          <option>Interested in: Rough parcels</option>
+          <option>Interested in: Polished diamonds</option>
+          <option>Interested in: Both</option>
+        </select>
+        <a class="btn btn-solid" href="#" style="justify-content:center;">Send inquiry</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="label">Orivia Diamonds</span>
+      <p>A division of Orivia Minerals, trading natural, untreated diamonds sourced across Sub-Saharan Africa under Kimberley Process certification, full digital traceability and the highest applicable international and national compliance standards.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#catalogue">Diamonds</a>
+      <a href="#origin">Origin</a>
+      <a href="#grading">Standards</a>
+      <a href="#trade">Trade inquiries</a>
+    </div>
+  </div>
+</footer>
+
+<dialog id="parcel-modal">
+  <div class="modal-head">
+    <div>
+      <span class="label">Current parcel</span>
+      <h3>Sierra Leone</h3>
+    </div>
+    <button type="button" class="close-x" onclick="document.getElementById('parcel-modal').close()" aria-label="Close">CLOSE ✕</button>
+  </div>
+  <div class="modal-body">
+    <dl class="spec-list">
+      <div class="spec"><dt>Parcel weight</dt><dd>1,500.00 CT</dd></div>
+      <div class="spec"><dt>Stone count</dt><dd>272 DIAMONDS</dd></div>
+      <div class="spec"><dt>Trade form</dt><dd>SAWABLE / MAKEABLE</dd></div>
+      <div class="spec"><dt>Clarity range</dt><dd>FL – SI1</dd></div>
+      <div class="spec"><dt>Colour range</dt><dd>D – J + FANCY YELLOW</dd></div>
+      <div class="spec"><dt>Fluorescence</dt><dd>NONE</dd></div>
+      <div class="spec"><dt>Certification</dt><dd>KP + DIGITAL TRACEABILITY</dd></div>
+    </dl>
+    <a class="btn btn-solid" href="#trade" onclick="document.getElementById('parcel-modal').close()">Request full manifest</a>
+  </div>
+</dialog>
+
+</body>
+</html>
