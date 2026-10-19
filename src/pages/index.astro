@@ -241,12 +241,13 @@
   .cta h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:14px;}
   .cta p{color:var(--ink-soft);max-width:42ch;}
   .cta-form{display:flex;flex-direction:column;gap:12px;}
-  .cta-form input,.cta-form select{
+  .cta-form input,.cta-form select,.cta-form textarea{
     font-family:'Work Sans',sans-serif;font-size:0.9rem;
     padding:12px 14px;border:1px solid var(--paper-soft);background:var(--paper);color:var(--ink);
     border-radius:2px;
   }
-  .cta-form input:focus,.cta-form select:focus{outline:2px solid var(--laterite);outline-offset:1px;}
+  .cta-form textarea{resize:vertical;min-height:72px;}
+  .cta-form input:focus,.cta-form select:focus,.cta-form textarea:focus{outline:2px solid var(--laterite);outline-offset:1px;}
 
   /* ---------- PARCEL MODAL ---------- */
   dialog#parcel-modal{
@@ -474,6 +475,7 @@
           <option>Interested in: Polished diamonds</option>
           <option>Interested in: Both</option>
         </select>
+        <textarea placeholder="Notes: carat, clarity, colour, cut (optional)" rows="3"></textarea>
         <a class="btn btn-solid" href="#" style="justify-content:center;">Send inquiry</a>
       </form>
     </div>
